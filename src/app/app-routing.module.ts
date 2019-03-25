@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginForm } from './LoginForm/login.component';
+import { Home } from './Home/home.component';
 
 const routes: Routes = [
   {path: "login" , component: LoginForm },
-  {path:'', redirectTo :'', pathMatch: 'full'},
+  {path: "home" , component: Home},
+  {path:'', redirectTo :'home', pathMatch: 'full'},
 ];
 
 @NgModule({
@@ -12,5 +14,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  
+
  }
