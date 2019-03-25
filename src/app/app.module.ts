@@ -4,12 +4,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginForm } from './LoginForm/login.component';
 import { Home } from './Home/home.component';
+import { Register } from './RegisterForm/regf.component';
+import { ContactUs } from './ContactUsForm/contactus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginForm,
-    Home
+    Home,
+    Register,
+    ContactUs
   ],
   imports: [
     BrowserModule,

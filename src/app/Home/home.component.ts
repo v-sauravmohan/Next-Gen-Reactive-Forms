@@ -7,5 +7,5 @@ import {Component} from '@angular/core';
 
 
 export class Home{
-    title: 'Next Generation Reactive Forms'
+    title = 'Next Generation Reative Forms';
 }
