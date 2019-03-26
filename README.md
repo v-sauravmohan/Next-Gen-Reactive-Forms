@@ -1,6 +1,7 @@
 # Next Generation Forms
  
-"Started as a practice excercise but now i have big plans for it" Saurav Mohan V
+"Started as a practice excercise but now i have big plans for it" Saurav Mohan V.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
 ## Development server
