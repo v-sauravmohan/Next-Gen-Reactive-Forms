@@ -48,24 +48,39 @@ form {
     border-radius: 50%;
   }
   
-  /* Add padding to containers */
-  .container {
-    padding: 16px;
-  }
   
   /* The "Forgot password" text */
   span.psw {
     float: right;
     padding-top: 16px;
   }
+
+  .cancelbtn {
+    width: 100%;
+  }
+
   
   /* Change styles for span and cancel button on extra small screens */
-  @media screen and (max-width: 300px) {
+ /* @media screen and (max-width: 300px) {
     span.psw {
       display: block;
       float: none;
     }
-    .cancelbtn {
-      width: 100%;
-    }
+  } */
+
+/* ----------- Non-Retina and Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1000px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1)
+  and (min-device-width: 1000px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+    .container{
+      max-width: 500px;
+      margin-top: 25px;
   }
+}
+
+ 
