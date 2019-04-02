@@ -1,7 +1,14 @@
 /* Bordered form */
 form {
-    border: 3px solid #f1f1f1;
-  }
+     border-style: solid;
+     width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 10px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+     
+     
+   }
   
   /* Full-width inputs */
   input[type=text], input[type=password] {
@@ -52,22 +59,42 @@ form {
   /* The "Forgot password" text */
   span.psw {
     float: right;
-    padding-top: 16px;
+    padding-top: 5px;
+    margin-bottom: 16px;
+
+  }
+
+  .checkbox{
+    margin-left: 2px;
   }
 
   .cancelbtn {
     width: 100%;
   }
+  
+  h2{
+    font-weight: 50;
+    text-align: center;
+    margin-bottom: 25px;
+  }
 
   
+  
   /* Change styles for span and cancel button on extra small screens */
- /* @media screen and (max-width: 300px) {
+ @media screen and (max-width: 300px) {
     span.psw {
       display: block;
       float: none;
     }
-  } */
-
+  } 
+/* ---- Overrides Bootstrap Container to set custom width for our container ------*/
+@media (min-width: 1200px) {
+    .container{
+        
+        max-width: 500px;
+        margin-top: 35px;
+    }
+}
 /* ----------- Non-Retina and Retina Screens ----------- */
 @media screen 
   and (min-device-width: 1000px) 
@@ -79,6 +106,7 @@ form {
   and (min-resolution: 192dpi) { 
     .container{
       max-width: 500px;
+      align-content: center;
       margin-top: 25px;
   }
 }
