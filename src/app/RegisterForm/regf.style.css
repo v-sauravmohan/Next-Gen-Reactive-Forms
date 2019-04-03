@@ -33,11 +33,14 @@ hr {
   padding: 16px 20px;
   margin: 8px 0;
   border: none;
+  border-radius: 10px;
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
 }
-
+.centeralign{
+  text-align: center;
+}
 .registerbtn:hover {
   opacity:1;
 }
