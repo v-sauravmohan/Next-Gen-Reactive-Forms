@@ -8,6 +8,7 @@ import { Register } from './RegisterForm/regf.component';
 import { ContactUs } from './ContactUsForm/contactus.component';
 import { NavBar } from './Navbar/navbar.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
