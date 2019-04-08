@@ -1,45 +1,57 @@
-<div class="container additional">
-    <form [formGroup]="contactUsForm" (ngSubmit)="OnSubmit()" >
+<!-- main app container -->
+<div style="margin-top: 75px;">
+<div class="row">
+          <div class="col-md-6 offset-md-3">
+              <h3>Simple Contact Us Form</h3>
+              <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                      <label>First Name</label>
+                      <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                          <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Last Name</label>
+                      <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                          <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Email</label>
+                      <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                          <div *ngIf="f.email.errors.required">Email is required</div>
+                          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Country</label>
+                          <select id="country" formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" >
+                          <option value="australia">Australia</option>
+                          <option value="canada">Canada</option>
+                          <option value="usa">USA</option>
+                        </select>
+                        <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                            <div *ngIf="f.country.errors.required">Country is required</div>
+                        </div>
+                  </div>
+                  <div class="form-group">
+                  <label>Subject</label>
+                  <textarea type="text" formControlName="subject" placeholder="Write something.." style="height:200px" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subject.errors }">
+                  </textarea>
+                  <div *ngIf="submitted && f.subject.errors" class="invalid-feedback">
+                        <div *ngIf="f.subject.errors.required">Subject is required</div>
+                        <div *ngIf="f.email.errors.minlength">Subject not sufficient</div>
+                    </div>
+                  </div>
 
-      <label for="fname">First Name</label>
-      <input type="text" id="fname" formControlName="fname" placeholder="Your name.." required [ngClass]="{ 'is-invalid': 'submitted && fname.errors' }">
-      <!--Error messages to notify the user about the conditions for validity of first name-->
-              <div *ngIf="'is-invalid && (fname.dirty || fname.touched)'" class="alert alert-danger">
-              <div *ngIf="'fname.errors.required'"> First Name is required </div>
-              <div *ngIf="'fname.errors.minlength'">First Name must be at least 2 characters long.</div>
-              </div>
-     <!--<p *ngIf="'this.fname.invalid && !this.fname.pristine'">First name is required.</p>-->
-
-      <label for="lname">Last Name</label>
-      <input type="text" id="lname" formControlName="lname" placeholder="Your last name.." required>
-      <!--Error messages to notify the user about the conditions for validity of Last name--> 
-          <div *ngIf="'lname.invalid && (lname.dirty || lname.touched)'"class="alert alert-danger">
-          <div *ngIf="'lname.errors.required'"> Last Name is required </div>
-          <div *ngIf="'lname.errors.minlength'">Last Name must be at least 2 characters long.</div>
+                
+                  <div class="form-group">
+                      <button class="btn btn-primary">Contact Us</button>
+                  </div>
+              </form>
           </div>
-     <!-- <p *ngIf="lname.invalid && !lname.pristine">Last name is required.</p> -->
-            
-      <label for="country">Country</label>
-      <select id="country" formControlName="country" required>
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-      </select>
-      <!--Error messages to notify the user about the conditions for validity of Country-->
-          <div *ngIf="'country.invalid && (country.dirty || country.touched)'"class="alert alert-danger">
-          <div *ngIf="'country.errors.required'"> Country is required </div>
-          </div>   
-      <!--<p *ngIf="lname.invalid && !lname.pristine">Last name is required.</p> -->
-
-      <label for="subject">Subject</label>
-      <textarea id="subject" formControlName="subject" placeholder="Write something.." style="height:200px" required>
-      </textarea>
-      <!--Error messages to notify the user about the conditions for validity of Subject --> 
-          <div *ngIf="'subject.invalid && (subject.dirty || subject.touched)'"class="alert alert-danger">
-          <div *ngIf="'subject.errors.required'"> Subject is required </div>
-          <div *ngIf="'subject.errors.minlength'">Subject must be at least 10 characters long.</div>
-          </div> 
-      <input type="submit" value="Submit" [disabled]="">
-      <button type="button" class="cancelbtn" (click)="OnCancel()" >Cancel</button>
-    </form>
-  </div>
+      </div>
+    </div>

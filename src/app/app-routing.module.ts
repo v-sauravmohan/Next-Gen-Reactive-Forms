@@ -6,10 +6,10 @@ import { Register } from './RegisterForm/regf.component';
 import { ContactUs } from './ContactUsForm/contactus.component';
 
 const routes: Routes = [
-  {path: "login" , component: LoginForm },
-  {path: "home" , component: Home},
-  {path: "register" ,component: Register},
-  {path: "contactus" , component:ContactUs},
+  {path: 'login' , component: LoginForm },
+  {path: 'home' , component: Home},
+  {path: 'register' ,component: Register},
+  {path: 'contactus' , component:ContactUs},
   {path:'', redirectTo :'home', pathMatch: 'full'}
 ];
 
