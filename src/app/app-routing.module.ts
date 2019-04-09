@@ -4,17 +4,21 @@ import { LoginForm } from './LoginForm/login.component';
 import { Home } from './Home/home.component';
 import { Register } from './RegisterForm/regf.component';
 import { ContactUs } from './ContactUsForm/contactus.component';
+import { AboutUs } from './AboutUs/aboutus.component';
 
 const routes: Routes = [
   {path: 'login' , component: LoginForm },
   {path: 'home' , component: Home},
   {path: 'register' ,component: Register},
   {path: 'contactus' , component:ContactUs},
+  {path: 'aboutus' , component: AboutUs},
   {path:'', redirectTo :'home', pathMatch: 'full'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, 
+    {scrollPositionRestoration: 'enabled', 
+    anchorScrolling: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

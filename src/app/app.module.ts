@@ -10,6 +10,7 @@ import { NavBar } from './Navbar/navbar.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FooterBar } from './FooterBar/footerbar.component';
+import { AboutUs } from './AboutUs/aboutus.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FooterBar } from './FooterBar/footerbar.component';
     Register,
     ContactUs,
     NavBar,
-    FooterBar
+    FooterBar,
+    AboutUs
   ],
   imports: [
     BrowserModule,
