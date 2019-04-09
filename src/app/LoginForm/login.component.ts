@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {FormControl,FormBuilder,FormGroup,Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
     templateUrl: './login.template.html',
@@ -8,27 +8,24 @@ import {FormControl,FormBuilder,FormGroup,Validators} from '@angular/forms';
 })
 
 export class LoginForm implements OnInit {
-loginForm:FormGroup
-unameCtrl: FormControl
-pswCtrl: FormControl
-rememberCtrl: FormControl
-constructor( private router:Router,private fb:FormBuilder){}
+loginForm: FormGroup;
+submitted = false;
+constructor( private router: Router, private formBuilder: FormBuilder) {}
+ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+        uname: ['',Validators.required],
+        psw: ['',Validators.required],
+        remember: ['']
+    });
+}
+get f() { return this.loginForm.controls; }
 
-ngOnInit(){
-    this.unameCtrl = this.fb.control('',[Validators.required,Validators.minLength(2)]);
-    this.pswCtrl = this.fb.control('',[Validators.required,Validators.minLength(2)]);
-    this.rememberCtrl = this.fb.control('');
-    this.createForm();
-}
-createForm(){
-this.loginForm = this.fb.group({
-    uname : this.unameCtrl,
-    psw : this.pswCtrl,
-    remember : this.rememberCtrl
-})
-}
 OnSubmit(){
-    console.log(this.loginForm.value);
+   this.submitted = true;
+   if (this.loginForm.invalid){
+       return;
+   }
+   console.log(this.loginForm.value);
 }
 cancel(){
     this.router.navigate(['/']);

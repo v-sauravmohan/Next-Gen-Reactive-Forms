@@ -5,47 +5,26 @@
     <img src="assets/images/img_avatar2.png" alt="Avatar" class="avatar">
   </div>
 
-  <div>
-  
-    <input type="text" placeholder="Enter Username" name="uname" formControlName="uname" required>
+  <div class="form-group">
+  <input type="text" placeholder="Enter Username" formControlName="uname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.uname.errors }"/>
+    <div *ngIf="submitted && f.uname.errors" class="invalid-feedback">
+      <div *ngIf="f.uname.errors.required">Username is required</div>
+    </div>
+  </div>
 
-    
-    <input type="password" placeholder="Enter Password" name="psw" formControlName="psw" required>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+  <div class="form-group">
+  <input type="password" placeholder="Enter Password" formControlName="psw" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.psw.errors }">
+    <div *ngIf="submitted && f.psw.errors" class="invalid-feedback">
+      <div *ngIf="f.psw.errors.required">Password is required</div>
+    </div>
+  </div> 
+      
+<span class="psw">Forgot <a href="#">password?</a></span>
     <label>
       <input class="checkbox" type="checkbox" checked="checked" name="remember" formControlName="remember"> Remember me
     </label>    
     <button type="submit">Login</button>
-   
-  </div>
-
-  <div style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn" (click)="cancel()">Cancel</button>
-    
-  </div>
+
 </form>
 </div>
-<!--The Orginal Html commented and stored below-->
-<!--<h1 style="text-align:center">Login</h1>
-<hr>
-<div class="col-md-4" style="text-align:center">
-  <form autocomplete="off">
-    <div class="form-group" >
-      <label for="userName">User Name:</label>
-      <input id="userName" type="text" class="form-control" placeholder="User Name..." />
-    </div>
-    <div class="form-group" >
-      <label for="password">Password:</label>
-      <input id="password" type="password" class="form-control"placeholder="Password..." />
-    </div>
-        
-    <button type="submit" class="btn btn-primary">Login</button>
-    <button type="button" class="btn btn-default">Cancel</button>
-  </form>
-</div>
-
-<hr>
-
-<div style="text-align:center">
-<h4>Display Entered Data Here!!!</h4>
-</div>-->
