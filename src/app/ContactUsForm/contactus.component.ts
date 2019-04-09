@@ -5,7 +5,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
-    templateUrl: './contactus.template.html'
+    templateUrl: './contactus.template.html',
+    styleUrls: ['./contactus.style.css']
 })
 
 // tslint:disable-next-line: component-class-suffix
@@ -20,7 +21,7 @@ export class ContactUs implements OnInit {
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
             email: ['', [Validators.required, Validators.email]],
-            country: ['',Validators.required],
+            country: ['', Validators.required],
             subject: ['', [Validators.required, Validators.minLength(15)]]
         });
     }

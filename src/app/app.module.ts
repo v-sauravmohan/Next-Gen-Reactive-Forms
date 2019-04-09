@@ -7,8 +7,10 @@ import { Home } from './Home/home.component';
 import { Register } from './RegisterForm/regf.component';
 import { ContactUs } from './ContactUsForm/contactus.component';
 import { NavBar } from './Navbar/navbar.component';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FooterBar } from './FooterBar/footerbar.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { CommonModule } from '@angular/common';
     Home,
     Register,
     ContactUs,
-    NavBar
+    NavBar,
+    FooterBar
   ],
   imports: [
     BrowserModule,
