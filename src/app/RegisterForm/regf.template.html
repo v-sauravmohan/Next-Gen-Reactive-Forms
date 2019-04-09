@@ -4,14 +4,25 @@
       <p>Please fill in this form to create an account.</p>
       <hr>
   
+      <div class="form-group">
+      <input type="text" placeholder="Enter Email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email id is required</div>
+          <div *ngIf="f.email.errors.email">Email id is Invalid</div>
+      </div>
+      </div>
+  
+      <input type="password" placeholder="Enter Password" formControlName="psw" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.psw.errors }"/> 
+      <div *ngIf="submitted && f.psw.errors" class="invalid-feedback">
+          <div *ngIf="f.psw.errors.required">Password is required</div>
+          <div *ngIf="f.psw.errors.minlength">Password too short</div>
+      </div>
      
-      <input type="text" placeholder="Enter Email" name="email" formControlName="email" required>
-  
-  
-      <input type="password" placeholder="Enter Password" name="psw" formControlName="psw" required>
-  
-     
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" formControlName="psw_repeat" required>
+      <input type="password" placeholder="Repeat Password" formControlName="psw_repeat" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.psw_repeat.errors }"/> 
+      <div *ngIf="submitted && f.psw_repeat.errors" class="invalid-feedback">
+          <div *ngIf="f.psw_repeat.errors.required">Confirm Password is required</div>
+          <div *ngIf="f.psw_repeat.errors.minlength">Confirm Password too short</div>
+      </div>
       <hr>
   
       <p class="centeralign">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>

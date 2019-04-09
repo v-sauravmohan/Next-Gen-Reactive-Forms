@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
 templateUrl  : './regf.template.html',
@@ -7,28 +8,25 @@ styleUrls : ['./regf.style.css']
 })
 
 
-export class Register implements OnInit{ 
-regForm:FormGroup
-emailCtrl: FormControl
-pswCtrl:FormControl
-psw_repeatCtrl: FormControl
-constructor(private fb:FormBuilder){}
-    
-    ngOnInit(){
-        this.emailCtrl=this.fb.control('',[Validators.required,Validators.email,Validators.minLength(2)])
-        this.pswCtrl=this.fb.control('',[Validators.required,Validators.minLength(2)])
-        this.psw_repeatCtrl = this.fb.control('',[Validators.required,Validators.minLength(2)])
-        this.createForm();
-    }
-    
-    createForm(){
-        this.regForm = this.fb.group({
-            email : this.emailCtrl,
-            psw: this.pswCtrl,
-            psw_repeat:  this.psw_repeatCtrl
+export class Register implements OnInit { 
+regForm: FormGroup;
+submitted = false;
+constructor(private formBuilder: FormBuilder) {}
+ngOnInit(){
+        this.regForm = this.formBuilder.group({
+            email: ['',[Validators.required, Validators.email]],
+            psw: ['',[Validators.required, Validators.minLength(8)]],
+            psw_repeat: ['',[Validators.required, Validators.minLength(8)]]
         })
     }
+
+    get f() { return this.regForm.controls; }
+    
     OnSubmit(){
-        console.log(this.regForm.value);
+    this.submitted = true;
+    if( this.regForm.invalid){
+        return;
     }
+    console.log(this.regForm.value);
+}
 }
