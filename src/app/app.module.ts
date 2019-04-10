@@ -11,6 +11,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FooterBar } from './FooterBar/footerbar.component';
 import { AboutUs } from './AboutUs/aboutus.component';
+import { GetEntry } from './Services/getentry.service';
+import { InfoViewer } from './InfoViewer/infoviewer.component';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { AboutUs } from './AboutUs/aboutus.component';
     ContactUs,
     NavBar,
     FooterBar,
-    AboutUs
+    AboutUs,
+    InfoViewer
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { AboutUs } from './AboutUs/aboutus.component';
     FormsModule,
     CommonModule
   ],
-  providers: [],
+  providers: [GetEntry],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
