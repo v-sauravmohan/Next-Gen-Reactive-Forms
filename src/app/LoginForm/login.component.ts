@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { GetEntry } from '../Services/getentry.service';
+
+/*navigationExtras is used to sent the data from any component to infoviewer */
+
+let navigationExtras: NavigationExtras = {
+    state:{
+        data : '' }
+    };
+
 
 @Component({
     templateUrl: './login.template.html',
@@ -11,7 +18,8 @@ import { GetEntry } from '../Services/getentry.service';
 export class LoginForm implements OnInit {
 loginForm: FormGroup;
 submitted = false;
-constructor( private router: Router, private data: GetEntry, private formBuilder: FormBuilder) {}
+
+constructor( private router: Router, private formBuilder: FormBuilder) {}
 ngOnInit() {
     this.loginForm = this.formBuilder.group({
         uname: ['',Validators.required],
@@ -27,10 +35,16 @@ OnSubmit(){
        return;
    }
    console.log(this.loginForm.value);
-   this.data.sendMessage(this.loginForm.value);
-   this.router.navigate(['/entryviewer']);
+   navigationExtras = {
+    state: {
+        data : this.loginForm.value }
+    };
+   this.router.navigate(['/entryviewer'],navigationExtras);
 }
-cancel(){
+cancel() {
     this.router.navigate(['/']);
 }
 }
+
+
+

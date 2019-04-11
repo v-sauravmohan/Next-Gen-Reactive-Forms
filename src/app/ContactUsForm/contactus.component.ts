@@ -1,8 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavigationExtras, Router } from '@angular/router';
 
 // import custom validator to validate that password and confirm password fields match
+/*navigationExtras is used to sent the data from any component to infoviewer */
 
+// tslint:disable-next-line: no-var-keyword
+
+let navigationExtras: NavigationExtras = {
+    state:{
+        data : '' }
+    };
 
 @Component({
     templateUrl: './contactus.template.html',
@@ -14,7 +22,7 @@ export class ContactUs implements OnInit {
     contactUsForm: FormGroup;
     submitted = false;
 
-    constructor(private formBuilder: FormBuilder) { }
+    constructor(private router: Router, private formBuilder: FormBuilder) { }
 
     ngOnInit() {
         this.contactUsForm = this.formBuilder.group({
@@ -38,5 +46,10 @@ export class ContactUs implements OnInit {
         }
 
         console.log(this.contactUsForm.value);
+        navigationExtras = {
+            state: {
+                data : this.contactUsForm.value }
+            };
+        this.router.navigate(['/entryviewer'], navigationExtras);
     }
 }
