@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +12,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FooterBar } from './FooterBar/footerbar.component';
 import { AboutUs } from './AboutUs/aboutus.component';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import {FirebaseService} from './Services/firebase.service';
 
 @NgModule({
   declarations: [
@@ -22,16 +26,18 @@ import { AboutUs } from './AboutUs/aboutus.component';
     ContactUs,
     NavBar,
     FooterBar,
-    AboutUs
+    AboutUs,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    AngularFireModule.initializeApp(environment.firebase),
+ 	  AngularFirestoreModule
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
