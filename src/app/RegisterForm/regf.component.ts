@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FirebaseService } from '../Services/firebase.service';
 
 
 @Component({
@@ -8,10 +9,10 @@ styleUrls : ['./regf.style.css']
 })
 
 
-export class Register implements OnInit { 
+export class Register implements OnInit {
 regForm: FormGroup;
 submitted = false;
-constructor(private formBuilder: FormBuilder) {}
+constructor(private formBuilder: FormBuilder, private firebaseservice: FirebaseService) {}
 ngOnInit(){
         this.regForm = this.formBuilder.group({
             email: ['',[Validators.required, Validators.email]],
@@ -21,12 +22,15 @@ ngOnInit(){
     }
 
     get f() { return this.regForm.controls; }
-    
+
     OnSubmit(){
     this.submitted = true;
     if( this.regForm.invalid){
         return;
     }
     console.log(this.regForm.value);
+    //Firebase Connect test purposes
+    this.firebaseservice.registerUser(this.regForm.value).then(res=>{
+    })
 }
 }
