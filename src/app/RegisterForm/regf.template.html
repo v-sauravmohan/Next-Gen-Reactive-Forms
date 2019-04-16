@@ -22,6 +22,7 @@
       <div *ngIf="submitted && f.psw_repeat.errors" class="invalid-feedback">
           <div *ngIf="f.psw_repeat.errors.required">Confirm Password is required</div>
           <div *ngIf="f.psw_repeat.errors.minlength">Confirm Password too short</div>
+          <div *ngIf="f.psw_repeat.errors.mustMatch">Passwords must match</div>
       </div>
       <hr>
   

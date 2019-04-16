@@ -1,19 +1,20 @@
-import { Component , OnDestroy } from '@angular/core';
-import { GetEntry } from '../Services/getentry.service';
-import { Subscription } from 'rxjs';
+import { Component , OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    templateUrl:'./infoviewer.template.html',
+    templateUrl: './infoviewer.template.html',
     styleUrls: ['./infoviewer.style.css']
 })
-export class InfoViewer{
-    message: string;
-    constructor(private router:Router) {
+// tslint:disable-next-line: component-class-suffix
+export class InfoViewer {
+    message: string[];
+    obj: any;
+    uname: string;
+
+    constructor(private router: Router) {
         const navigation = this.router.getCurrentNavigation();
         const state = navigation.extras.state as {
-            data: string  };
+            data: string[]  };
         this.message = state.data;
-        console.log(this.message);
     }
 }

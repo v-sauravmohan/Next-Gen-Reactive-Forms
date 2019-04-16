@@ -18,6 +18,7 @@ let navigationExtras: NavigationExtras = {
 export class LoginForm implements OnInit {
 loginForm: FormGroup;
 submitted = false;
+entries: string[];
 
 constructor( private router: Router, private formBuilder: FormBuilder) {}
 ngOnInit() {
@@ -35,9 +36,10 @@ OnSubmit(){
        return;
    }
    console.log(this.loginForm.value);
+   this.entries = [this.loginForm.value.uname, this.loginForm.value.psw, this.loginForm.value.remember];
    navigationExtras = {
     state: {
-        data : this.loginForm.value }
+        data : this.entries }
     };
    this.router.navigate(['/entryviewer'],navigationExtras);
 }

@@ -21,6 +21,7 @@ let navigationExtras: NavigationExtras = {
 export class ContactUs implements OnInit {
     contactUsForm: FormGroup;
     submitted = false;
+    entries: string[];
 
     constructor(private router: Router, private formBuilder: FormBuilder) { }
 
@@ -46,9 +47,14 @@ export class ContactUs implements OnInit {
         }
 
         console.log(this.contactUsForm.value);
+        this.entries = [this.contactUsForm.value.firstName,
+                        this.contactUsForm.value.lastName,
+                        this.contactUsForm.value.email,
+                        this.contactUsForm.value.country,
+                        this.contactUsForm.value.subject];
         navigationExtras = {
             state: {
-                data : this.contactUsForm.value }
+                data : this.entries }
             };
         this.router.navigate(['/entryviewer'], navigationExtras);
     }
