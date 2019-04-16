@@ -1,4 +1,4 @@
-import { Component , OnInit } from '@angular/core';
+import { Component , OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,6 +10,8 @@ export class InfoViewer {
     message: string[];
     obj: any;
     uname: string;
+    @Input()
+    ngSwitch: any;
 
     constructor(private router: Router) {
         const navigation = this.router.getCurrentNavigation();

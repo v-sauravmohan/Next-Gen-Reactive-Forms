@@ -36,7 +36,7 @@ OnSubmit(){
        return;
    }
    console.log(this.loginForm.value);
-   this.entries = [this.loginForm.value.uname, this.loginForm.value.psw, this.loginForm.value.remember];
+   this.entries = ['2', this.loginForm.value.uname, this.loginForm.value.psw, this.loginForm.value.remember];
    navigationExtras = {
     state: {
         data : this.entries }

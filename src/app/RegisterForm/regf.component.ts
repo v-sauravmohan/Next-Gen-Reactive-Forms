@@ -44,7 +44,7 @@ ngOnInit() {
         return;
     }
     console.log(this.regForm.value);
-    this.entries = [this.regForm.value.email, this.regForm.value.psw, this.regForm.value.psw_repeat];
+    this.entries = ['1', this.regForm.value.email, this.regForm.value.psw, this.regForm.value.psw_repeat];
     navigationExtras = {
         state: {
             data: this.entries}

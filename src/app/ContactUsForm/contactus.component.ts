@@ -47,7 +47,7 @@ export class ContactUs implements OnInit {
         }
 
         console.log(this.contactUsForm.value);
-        this.entries = [this.contactUsForm.value.firstName,
+        this.entries = ['3', this.contactUsForm.value.firstName,
                         this.contactUsForm.value.lastName,
                         this.contactUsForm.value.email,
                         this.contactUsForm.value.country,
