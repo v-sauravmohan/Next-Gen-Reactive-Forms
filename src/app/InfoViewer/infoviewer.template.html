@@ -1,17 +1,14 @@
 <div class="row">
-<div class="col-lg" >
-    <span [ngSwitch]="this.message[0]">
-    <h2 *ngSwitchCase="1">Registeration Form</h2>
-    <h2 *ngSwitchCase="2">Login Form</h2>
-    <h2 *ngSwitchCase="3">Contact Us</h2>
-    <h2 *ngSwitchDefault>No data received!!</h2>
+<div class="col-md heading" >
+    <span>  
+    <h2>{{this.message[0]}}</h2>
     </span>
 </div>
-<div class="col-lg">
-    <h2>Entries</h2>
+<div class="col-md values">
+    <h2>You have entered the following values!</h2>
     <ul>
     <li *ngFor="let entry of this.message | slice:1">
-      {{ entry }}
+        {{ entry }}   
     </li>
     </ul>
 </div>

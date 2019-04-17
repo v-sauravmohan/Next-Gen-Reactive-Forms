@@ -1,7 +1,17 @@
 /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
+input[type=text], textarea {
     width: 100%; /* Full width */
     padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+
+  select{
+    width: 100%; /* Full width */ 
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -12,7 +22,7 @@ input[type=text], select, textarea {
   
   /* Style the submit button with a specific background color etc */
   form:valid input[type=submit] {
-    background-color: #4CAF50;
+    background-color: #343a40;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -33,7 +43,7 @@ input[type=text], select, textarea {
   
   /* When moving the mouse over the submit button, add a darker green color */
   input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #404447;
   }
   
   /* Add a background color and some padding around the form */
@@ -43,19 +53,7 @@ input[type=text], select, textarea {
     padding: 20px;
   }
 
-  .cancelbtn {
-    background-color: #ee6631;
-    margin-left: 10px;
-    border: none; 
-    color:white;
-    padding: 12px 20px; 
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .cancelbtn:hover {
-    background-color: #ee2d1f;
-  }
+
 
   @media (min-width: 1000px) {
    .container{

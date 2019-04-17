@@ -1,0 +1,54 @@
+.row{
+    margin-top: 75px;
+
+}
+span > h2{
+    text-align: center;
+    margin-top: 50%;
+    margin-bottom: 50%;
+    color: aliceblue;
+}
+
+.heading{
+    background-color: #343a40;  
+}
+
+.values{
+    background: #fbe8c5;
+}
+li{
+    margin-top: 25px;
+    font: bold 25px sans-serif;
+    padding-right: 25px;
+    word-wrap: break-word;
+}
+ul{
+    margin-top:25px;
+    margin-bottom: 25px;
+}
+div > h2{
+    text-align: center;
+    margin-top:15%;
+  
+}
+
+
+/* ---- Overrides Bootstrap Container to set custom width for our container ------*/
+@media (min-width: 1200px) {
+   
+}
+/* ----------- Non-Retina and Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1000px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1)
+  and (min-device-width: 1000px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+    .container{
+      max-width: 500px;
+      align-content: center;
+      margin-top: 25px;
+  }
+}

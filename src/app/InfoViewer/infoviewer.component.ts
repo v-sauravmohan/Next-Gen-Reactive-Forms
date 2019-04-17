@@ -8,12 +8,9 @@ import { Router } from '@angular/router';
 // tslint:disable-next-line: component-class-suffix
 export class InfoViewer {
     message: string[];
-    obj: any;
-    uname: string;
-    @Input()
-    ngSwitch: any;
 
-    constructor(private router: Router) {
+ 
+ constructor(private router: Router) {
         const navigation = this.router.getCurrentNavigation();
         const state = navigation.extras.state as {
             data: string[]  };
