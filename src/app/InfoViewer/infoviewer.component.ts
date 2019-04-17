@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 export class InfoViewer {
     message: string[];
 
- 
  constructor(private router: Router) {
         const navigation = this.router.getCurrentNavigation();
         const state = navigation.extras.state as {
