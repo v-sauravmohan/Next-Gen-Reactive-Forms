@@ -1,0 +1,15 @@
+<div class="jumbotron">
+    <h2>Next Gen Forms</h2>
+    <p>Complete list of forms designed using the reactive forms and validation framework in angular.</p>
+</div>
+<div class="container">
+      <ul>
+      <li *ngFor="let form of FormsList">
+          <p *ngFor="let item of form  | keyvalue">
+                {{item.formName}} {{item.formRoute}}
+          </p>
+      </li>
+      </ul>
+</div>
+
+

@@ -1,0 +1,21 @@
+
+li{
+    font: bold 16px sans-serif;
+    word-wrap: break-word;
+    max-width: 220px;   
+}
+ul{
+    max-height: 400px;
+    -moz-columns: 70px auto;
+    -webkit-columns: 70px auto;
+    columns: 70px auto;
+    -moz-column-gap: 5px;
+    -webkit-column-gap: 5px;
+    column-gap: 5px;
+    -moz-column-fill: auto;
+    -webkit-column-fill: auto;
+    column-fill: auto;
+    -webkit-column-count: 4; /* Chrome, Safari, Opera */
+    -moz-column-count: 4; /* Firefox */
+    column-count: 4;
+}
