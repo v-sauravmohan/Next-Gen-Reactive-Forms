@@ -8,10 +8,10 @@ import { IForms } from '../Services/iforms.model';
 })
 export class FormsPopulate implements OnInit{
 Formslist: IForms[];
- constructor(private DirRetriver:FormsDirectory){}
+ constructor(private DirRetriver: FormsDirectory){}
     ngOnInit(): void {
     this.Formslist = this.DirRetriver.getForms();
-    console.log(this.Formslist[1]);
+    console.log(this.Formslist[0]);
     console.log(typeof(this.Formslist[1]));
     }
 }

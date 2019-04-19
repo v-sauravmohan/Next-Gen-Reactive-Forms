@@ -5,9 +5,7 @@
 <div class="container">
       <ul>
       <li *ngFor="let form of FormsList">
-          <p *ngFor="let item of form  | keyvalue">
-                {{item.formName}} {{item.formRoute}}
-          </p>
+      {{form?.formName}}
       </li>
       </ul>
 </div>
