@@ -25,7 +25,7 @@ ngOnInit() {
     this.loginForm = this.formBuilder.group({
         uname: ['',Validators.required],
         psw: ['',Validators.required],
-        remember: ['']
+        remember: ['true']
     });
 }
 get f() { return this.loginForm.controls; }
