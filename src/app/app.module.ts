@@ -13,6 +13,8 @@ import { FooterBar } from './FooterBar/footerbar.component';
 import { AboutUs } from './AboutUs/aboutus.component';
 import { GetEntry } from './Services/getentry.service';
 import { InfoViewer } from './InfoViewer/infoviewer.component';
+import { FormsDirectory } from './Services/formsdirectory.service';
+import { FormsPopulate } from './FormsPopulate/formspop.component';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { InfoViewer } from './InfoViewer/infoviewer.component';
     NavBar,
     FooterBar,
     AboutUs,
-    InfoViewer
+    InfoViewer,
+    FormsPopulate
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,10 @@ import { InfoViewer } from './InfoViewer/infoviewer.component';
     FormsModule,
     CommonModule
   ],
-  providers: [GetEntry],
+  providers: [
+    GetEntry,
+    FormsDirectory
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
