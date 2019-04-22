@@ -29,3 +29,11 @@ background-color: #343a40;
 .links{
     font-weight:1;
 }
+
+@media only screen and (max-width: 320px)
+{
+    img{
+        width: 250px;
+        height: 250px;
+    }
+}
