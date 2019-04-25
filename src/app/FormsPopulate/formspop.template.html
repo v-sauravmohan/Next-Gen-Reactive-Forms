@@ -4,8 +4,8 @@
 </div>
 <div class="container">
       <ul>
-      <li *ngFor= "let Item of FormsList">
-        {{ Item.name }}
+      <li *ngFor= "let Item of Formslist">
+        <a routerLink={{Item.route}}>{{ Item.name }}</a>
        </li>
       </ul>
 </div>

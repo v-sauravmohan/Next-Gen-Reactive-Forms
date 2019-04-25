@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import { IForms } from './iforms.model';
+import { Routes } from './routeindex';
 
-
-const Directory: IForms[] =
+const Directory =
 [
-{'formName': 'name1', 'formRoute': 'route1'},
-{'formName': 'name2', 'formRoute': 'route2'},
-{'formName': 'name3', 'formRoute': 'route3'},
-{'formName': 'name4', 'formRoute': 'route4'},
-{'formName': 'name5', 'formRoute': 'route5'}
+    new Routes('Login Form', '/login'),
+    new Routes('Registeration Form', '/register'),
+    new Routes('Contact Form', '/contactus')
 ];
 
 
@@ -16,7 +14,7 @@ const Directory: IForms[] =
 
 export class FormsDirectory {
 
-    getForms(): IForms[] {
+    getForms(): Routes[] {
         return Directory;
     }
 }
