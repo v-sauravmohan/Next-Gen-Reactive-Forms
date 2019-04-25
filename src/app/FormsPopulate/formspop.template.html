@@ -4,9 +4,9 @@
 </div>
 <div class="container">
       <ul>
-      <li *ngFor="let entry of message | slice:1">
-        <div JParser [jsonObject] = "hello"></div>
-      </li>
+      <li *ngFor= "let Item of FormsList">
+        {{ Item.name }}
+       </li>
       </ul>
 </div>
 

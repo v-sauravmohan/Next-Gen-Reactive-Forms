@@ -4,11 +4,11 @@ import { IForms } from './iforms.model';
 
 const Directory: IForms[] =
 [
-{formName: 'name', formRoute: 'route'},
-{formName: 'name', formRoute: 'route'},
-{formName: 'name', formRoute: 'route'},
-{formName: 'name', formRoute: 'route'},
-{formName: 'name', formRoute: 'route'}
+{'formName': 'name1', 'formRoute': 'route1'},
+{'formName': 'name2', 'formRoute': 'route2'},
+{'formName': 'name3', 'formRoute': 'route3'},
+{'formName': 'name4', 'formRoute': 'route4'},
+{'formName': 'name5', 'formRoute': 'route5'}
 ];
 
 
