@@ -15,6 +15,7 @@ import { GetEntry } from './Services/getentry.service';
 import { InfoViewer } from './InfoViewer/infoviewer.component';
 import { FormsDirectory } from './Services/formsdirectory.service';
 import { FormsPopulate } from './FormsPopulate/formspop.component';
+import { JParser } from './Services/Parse.directive';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FormsPopulate } from './FormsPopulate/formspop.component';
     FooterBar,
     AboutUs,
     InfoViewer,
-    FormsPopulate
+    FormsPopulate,
+    JParser
   ],
   imports: [
     BrowserModule,

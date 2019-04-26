@@ -4,17 +4,9 @@
 </div>
 <div class="container">
       <ul>
-        <li><a routerLink="/login">Login Form </a> </li>
-        <li><a routerLink="/register">Registeration Form</a> </li>
-        <li><a routerLink="/contactus">Contact Form</a></li>
-        <li></li>
-        <li></li>
-        <li></li>      
-        <li></li>
-        <li></li>
-       
-    
-
+      <li *ngFor= "let Item of Formslist">
+        <a routerLink={{Item.route}}>{{ Item.name }}</a>
+       </li>
       </ul>
 </div>
 
