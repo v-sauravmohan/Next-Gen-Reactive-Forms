@@ -1,6 +1,6 @@
 <form [formGroup]="regForm" (ngSubmit)="OnSubmit()">
     <div class="container">
-      <h3>Simple Registeration Form</h3>
+      <h3>Simple Registration Form</h3>
       <p>Please fill in this form to create an account.</p>
       <hr>
   
@@ -33,5 +33,5 @@
   <div class="container signin">
     <p>Already have an account?</p>
 <!--<a href="#">Sign in</a>-->
-    <button type="submit" class="registerbtn">Sign In</button>
+    <button class="registerbtn" (click) ="LoginRoute()">Sign In</button>
 </div>
