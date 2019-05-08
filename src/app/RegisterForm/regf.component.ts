@@ -50,5 +50,8 @@ ngOnInit() {
             data: this.entries}
     };
     this.router.navigate(['/entryviewer'], navigationExtras);
-}
+    }
+    LoginRoute(){
+        this.router.navigate(['/login']);
+    }
 }
